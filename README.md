@@ -108,10 +108,10 @@ PlantGenoANN is highly customizable. You can adjust sliding windows, confidence 
 * `--min_chromosome_size`: Minimum chromosome size for annotating (default: 1000000).
 
 **Filtering & Thresholds:**
-* `--threshold`: Minimum probability threshold for valid nucleotides (default: 0.5).
-* `--min_gene_conf_score`: The lowest gene confidence score (default: 0.6).
-* `--min_intron_conf_score`: The lowest intron confidence score (default: 0.70).
-* `--min_cds_conf_score`: The lowest CDS confidence score (default: 0.70).
+* `--threshold`: Minimum probability threshold for valid nucleotides (default: 0.50).
+* `--min_gene_conf_score`: The lowest gene confidence score (default: 0.50).
+* `--min_intron_conf_score`: The lowest intron confidence score (default: 0.50).
+* `--min_cds_conf_score`: The lowest CDS confidence score (default: 0.50).
 * `--min_gene_length`, `--min_intron_length`, `--min_cds_length`: Filter out predicted elements shorter than these values.
 
 *For a full list of parameters, simply run `python run_annotator.py --help`.*
