@@ -99,7 +99,7 @@ PlantGenoANN is highly customizable. You can adjust sliding windows, confidence 
 **Hardware & Processing:**
 * `--batch_size`: The number of samples in a batch (default: 8).
 * `--num_workers`: The number of CPU cores to load data in parallel (default: 8).
-* `--num_tokenize_threads`: Number of CPU cores used to tokenize the sequence (default: 24).
+* `--num_tokenize_threads`: Number of CPU cores used to tokenize the sequence (default: 16).
 * `--cache_path`: Specify the path to cache intermediate datasets (default: "auto").
 
 **Sequence & Window Settings:**
