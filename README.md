@@ -117,3 +117,6 @@ PlantGenoANN is highly customizable. You can adjust sliding windows, confidence 
 *For a full list of parameters, simply run `python run_annotator.py --help`.*
 ## 📜 License
 See the LICENSE file for details.
+## 📧 Contact
+Feel free to contact us if you have any questions or suggestions regarding the code and models.
+
