@@ -26,7 +26,7 @@ conda create -n plantgenoann python=3.8
 conda activate plantgenoann
 
 # 2. Clone the repository
-git clone [https://github.com/Your-Org/PlantGenoANN.git](https://github.com/Your-Org/PlantGenoANN.git)
+git clone https://github.com/qzzhang0131/PlantGenoANN.git
 cd PlantGenoANN
 
 # 3. Install dependencies
