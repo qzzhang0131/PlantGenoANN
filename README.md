@@ -10,7 +10,7 @@ Beyond standard annotation, PlantGenoANN serves as a **long-context plant genomi
 
 ## 🤗 Model Access
 The pre-trained weights for PlantGenoANN are hosted on Hugging Face:
-* **Model Hub:** [qzzhang/PlantGenoANN](https://huggingface.co/qzzhang/PlantGenoANN)
+* **Model Hub:** [qzzhang/PlantGenoAnn-M](https://huggingface.co/qzzhang/PlantGenoAnn-M)
 
 ---
 
