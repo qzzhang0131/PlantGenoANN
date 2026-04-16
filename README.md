@@ -92,7 +92,7 @@ To run the full prediction pipeline, use the `run_annotator.py` script. The pipe
 * `-o`: Specify the output path.
 * `-f`: Choose to write predictions to bigwig files or a standard gff file (default: "bigwig").
 
-**Write Prediction Tracks to Bigwig Files:**
+**Save Full Prediction Tracks to BigWig Files (Recommanded):**
 ```bash
 python run_annotator.py \
     -i ./example/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
@@ -101,7 +101,15 @@ python run_annotator.py \
     -o ./example \
     -f bigwig
 ```
-
+**Write Prediction Tracks to a Standard GFF3 Files:**
+```bash
+python run_annotator.py \
+    -i ./example/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
+    -s Arabidopsis_lyrata
+    -m ./PlantGenoAnn-model-plants \
+    -o ./example \
+    -f gff
+```
 
 ## 🛠️ Advanced Configuration (Optional)
 PlantGenoANN is highly customizable. You can adjust sliding windows, confidence thresholds, and hardware utilization to fit your specific needs:
