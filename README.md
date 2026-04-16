@@ -21,7 +21,7 @@ The pre-trained weights for **PlantGenoAnn-model-plants** and **PlantGenoAnn-mul
 * `src/`: Functional modules for sequence processing, model wrapping, and GFF generation.
 
 ## ⚙️ Installation & Environment
-The model inference requires the [mamba-ssm](https://github.com/state-spaces/mamba) and [causal-conv1d](https://github.com/Dao-AILab/causal-conv1d) libraries for the core backbone.
+The model requires the [mamba-ssm](https://github.com/state-spaces/mamba) and [causal-conv1d](https://github.com/Dao-AILab/causal-conv1d) libraries for the core backbone.
 ```bash
 # 1. Create and activate conda environment
 conda create -n plantgenoann python=3.8
