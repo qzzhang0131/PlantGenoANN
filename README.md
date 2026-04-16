@@ -92,6 +92,7 @@ To run the full prediction pipeline, use the `run_annotator.py` script. The pipe
 * `-o`: Specify the output path.
 * `-f`: Choose to write predictions to bigwig files or a standard gff file (default: "bigwig").
 
+**Write Prediction Tracks to Bigwig Files:**
 ```bash
 python run_annotator.py \
     -i ./example/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
