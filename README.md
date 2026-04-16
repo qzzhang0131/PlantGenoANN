@@ -17,7 +17,7 @@ The pre-trained weights for **PlantGenoAnn-model-plants** and **PlantGenoAnn-mul
 
 ## 📁 Repository Structure
 * `run_annotator.py`: Main entry point (extraction, tokenization, inference dispatch).
-* `annotator.py`: Core inference script utilizing `accelerate` library (bf16 precision).
+* `annotator.py`: Core inference script utilizing [accelerate](https://github.com/huggingface/accelerate) library (bf16 precision).
 * `src/`: Functional modules for sequence processing, model wrapping, and GFF generation.
 
 ## ⚙️ Installation & Environment
