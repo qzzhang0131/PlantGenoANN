@@ -91,7 +91,7 @@ python run_annotator.py \
     -i ./example/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
     -s Arabidopsis_lyrata
     -m ./PlantGenoAnn-model-plants \
-    -o ./examples \
+    -o ./example \
     -f bigwig
 ```
 
