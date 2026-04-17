@@ -111,8 +111,8 @@ python run_annotator.py \
     -f gff
 ```
 
-## 🛠️ Advanced Configuration (Optional)
-PlantGenoAnn is highly customizable. You can adjust sliding windows, confidence thresholds, and hardware utilization to fit your specific needs:
+## 🛠️ Advanced Pipeline Configuration (Optional)
+PlantGenoAnn prediction pipeline is highly customizable. You can adjust sliding windows, confidence thresholds, and hardware utilization to fit your specific needs:
 
 **Hardware & Processing:**
 * `--chunk_size`: The size of the chunks processed by annotator model (default: 3,200).
