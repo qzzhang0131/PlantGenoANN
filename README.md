@@ -90,7 +90,7 @@ To run the full prediction pipeline, use the `run_annotator.py` script. The pipe
 * `-s`: The species name to be predicted.
 * `-m`: Specify the path to the prediction model (downloaded weights from HuggingFace above).
 * `-o`: Specify the output path.
-* `-f`: Choose to write predictions to bigwig files or a standard gff file (default: "bigwig").
+* `-f`: Choose to write predictions to BigWig files or a standard GFF3 file (default: "bigwig").
 
 **Save Full Prediction Tracks to BigWig Files (Recommanded):**
 ```bash
