@@ -119,6 +119,7 @@ python run_annotator.py \
 ```
 
 **🛠️ Advanced Pipeline Configuration (Optional):**
+
 PlantGenoAnn prediction pipeline is highly customizable. You can adjust sliding windows, confidence thresholds, and hardware utilization to fit your specific needs:
 
 **Hardware & Processing:**
