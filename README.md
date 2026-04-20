@@ -92,7 +92,7 @@ print(f"Sequence embeddings shape is: {hidden_states.shape}")
 ### 2. Full Prediction Pipeline
 To run the full prediction pipeline, use the `run_annotator.py` script. The pipeline will automatically handle sliding windows, multi-GPU model inference, and standard output format.
 
-**🛠️ Basic Configuration:**
+**🛠️ 2.1 Basic Configuration:**
 * `-i`: The genome FA/FNA file to be predicted.
 * `-s`: The species name to be predicted.
 * `-m`: Specify the path to the prediction model (downloaded weights from HuggingFace above).
@@ -118,7 +118,7 @@ python run_annotator.py \
     -f gff
 ```
 
-**🛠️ Advanced Pipeline Configuration (Optional):**
+**🛠️ 2.2 Advanced Pipeline Configuration (Optional):**
 
 PlantGenoAnn prediction pipeline is highly customizable. You can adjust sliding windows, confidence thresholds, and hardware utilization to fit your specific needs:
 
