@@ -23,22 +23,18 @@ The pre-trained weights for **PlantGenoAnn-model-plants** and **PlantGenoAnn-mul
 ## ⚙️ Installation & Environment
 The model requires the [mamba-ssm](https://github.com/state-spaces/mamba) and [causal-conv1d](https://github.com/Dao-AILab/causal-conv1d) libraries for the core backbone.
 ```bash
-# 1. Create and activate conda environment
-conda create -n plantgenoann python=3.8
+# 1. Clone repository & create environment
+git clone https://github.com/qzzhang0131/PlantGenoAnn.git && cd PlantGenoAnn
+conda create -n plantgenoann python=3.8 -y
 conda activate plantgenoann
 
-# 2. Clone the repository
-git clone https://github.com/qzzhang0131/PlantGenoAnn.git
-cd PlantGenoAnn
-
-# 3. Install dependencies
+# 2. Install CUDA Toolkit 12.1 (Crucial for compiling extensions) & basic dependencies
+conda install -c nvidia cuda-toolkit=12.1.0 -y
 pip install -r requirements.txt
 
-# 4. Compile and install core CUDA libraries
+# 3. Compile core CUDA libraries (May take a few minutes)
 pip install ninja packaging
-MAX_JOBS=4 pip install causal-conv1d==1.2.0.post2 --no-build-isolation
-MAX_JOBS=4 pip install mamba-ssm==1.2.0.post1 --no-build-isolation
-MAX_JOBS=4 pip install flash-attn==2.5.6 --no-build-isolation
+MAX_JOBS=4 pip install causal-conv1d==1.2.0.post2 mamba-ssm==1.2.0.post1 flash-attn==2.5.6 --no-build-isolation
 
 ```
 
