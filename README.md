@@ -27,17 +27,13 @@ git clone https://github.com/qzzhang0131/PlantGenoAnn.git && cd PlantGenoAnn
 conda create -n plantgenoann python=3.8 -y
 conda activate plantgenoann
 
-# 2. Install CUDA Toolkit and system dependencies (Crucial for compiling extensions & Triton JIT)
-conda install -c nvidia cuda-toolkit=12.1.0 -y
-conda install -c conda-forge libxcrypt -y
+# 2. Install dependencies (Crucial for Triton JIT & CUDA extensions)
+conda install -c nvidia -c conda-forge cuda-toolkit=12.1.0 libxcrypt -y
 pip install -r requirements.txt
 
-# 3. Compile core CUDA libraries (May take a few minutes)
-pip install ninja packaging
-export CUDA_HOME=$CONDA_PREFIX
-export PATH=$CONDA_PREFIX/bin:$PATH
+# 3. Compile core CUDA libraries (May take 10-20 minutes)
+export CUDA_HOME=$CONDA_PREFIX PATH=$CONDA_PREFIX/bin:$PATH
 MAX_JOBS=4 pip install causal-conv1d==1.2.0.post2 mamba-ssm==1.2.0.post1 flash-attn==2.5.6 --no-build-isolation
-
 ```
 
 ## 🚀 Quick Start (Usage)
