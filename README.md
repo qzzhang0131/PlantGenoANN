@@ -10,10 +10,10 @@ Built upon the **[PlantBiMoE](https://github.com/HUST-Keep-Lin/PlantBiMoE)** arc
 
 ## 🤗 Model Access
 The pre-trained weights for **PlantGenoAnn-model-plants** and **PlantGenoAnn-multi-species** are hosted on Hugging Face:
-|Model Name|Access Link|Species|Tokens|
+|Model Name|Access Link|Species|Training Tokens|
 | :--- | :--- | :--- | :--- |
-| **PlantGenoAnn-model-plants** | [Hugging Face 链接](https://huggingface.co/qzzhang/PlantGenoAnn-model-plants) | 9 | 18B |
-| **PlantGenoAnn-multi-species** | [Hugging Face 链接](https://huggingface.co/qzzhang/PlantGenoAnn-multi-species) | 42 | 72B |
+| **PlantGenoAnn-model-plants** |https://huggingface.co/qzzhang/PlantGenoAnn-model-plants| 9 | 18B |
+| **PlantGenoAnn-multi-species** | https://huggingface.co/qzzhang/PlantGenoAnn-multi-species| 42 | 72B |
 
 
 ---
