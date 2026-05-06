@@ -168,8 +168,6 @@ Under default configuration, we recommend the following `batch_size` settings ba
 |------------|------|------|------|------|
 | batch size | 2    | 4    | 8    | 16   |
 
-It is strongly recommended to follow this table when setting the `--batch_size` parameter to ensure optimal performance and stability.
-
 ---
 
 ## 📜 License
