@@ -35,16 +35,16 @@ def main():
     parser.add_argument("--min_chromosome_size", type=int, default=1000000, 
                         help="Minimum chromosome size (bp) for annotating. The size below this value will not be annotate in given FA/FNA/FASTA files (default:1,000,000).")
     parser.add_argument("--threshold", type=float, default=0.50,
-                        help="Gff output format only: The minimum threshold of probability when judging whether a nucleotide is valid (default:0.5).")
+                        help="Gff output format only: The minimum threshold of probability when judging whether a nucleotide is valid (default:0.50).")
     parser.add_argument("--min_gene_length", type=int, default=50,
                         help="Gff output format only: The shortest gene length. Gene lengths below this value will be filtered out (default:50).")
     parser.add_argument("--min_intron_length", type=int, default=9,
                         help="Gff output format only: The shortest intron length. Intron lengths below this value will be filtered out (default:9).")
     parser.add_argument("--min_cds_length", type=int, default=9,
                         help="Gff output format only: The shortest CDS length. CDS lengths below this value will be filtered out (default:9).")
-    parser.add_argument("--min_gene_conf_score", type=float, default=0.60, help="Gff output format only: The lowest gene confidence score (default:0.6).")
-    parser.add_argument("--min_intron_conf_score", type=float, default=0.70, help="Gff output format only: The lowest intron confidence score (default:0.7).")
-    parser.add_argument("--min_cds_conf_score", type=float, default=0.70, help="Gff output format only: The lowest CDS confidence score (default:0.7).")
+    parser.add_argument("--min_gene_conf_score", type=float, default=0.60, help="Gff output format only: The lowest gene confidence score (default:0.60).")
+    parser.add_argument("--min_intron_conf_score", type=float, default=0.70, help="Gff output format only: The lowest intron confidence score (default:0.70).")
+    parser.add_argument("--min_cds_conf_score", type=float, default=0.70, help="Gff output format only: The lowest CDS confidence score (default:0.70).")
     args = parser.parse_args()
     
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
