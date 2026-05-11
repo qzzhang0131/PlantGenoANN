@@ -134,9 +134,9 @@ PlantGenoAnn prediction pipeline is highly customizable. You can adjust sliding 
 
 **Filtering & Thresholds (only with gff output format):**
 * `--threshold`: Minimum probability threshold for valid nucleotides (default: 0.50).
-* `--min_gene_conf_score`: The lowest gene confidence score (default: 0.50).
-* `--min_intron_conf_score`: The lowest intron confidence score (default: 0.50).
-* `--min_cds_conf_score`: The lowest CDS confidence score (default: 0.50).
+* `--min_gene_conf_score`: The lowest gene confidence score (default: 0.60).
+* `--min_intron_conf_score`: The lowest intron confidence score (default: 0.70).
+* `--min_cds_conf_score`: The lowest CDS confidence score (default: 0.70).
 * `--min_gene_length`, `--min_intron_length`, `--min_cds_length`: Filter out predicted elements shorter than these values.
 
 *For a full list of parameters, simply run `python run_annotator.py --help`.*
