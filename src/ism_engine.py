@@ -8,15 +8,7 @@ from accelerate import Accelerator
 from torch.utils.data import DataLoader, TensorDataset
 
 class PlantGenoAnnISMEngine:
-    def __init__(
-            self, 
-            fasta_file: str, 
-            repo_id: str, 
-            output_dir: str, 
-            batch_size: int = 24, 
-            seq_len: int = 49152, 
-            slice_len: int = 32768
-        ):
+    def __init__(self, fasta_file: str, repo_id: str, output_dir: str, batch_size: int = 24, seq_len: int = 49152, slice_len: int = 32768):
         self.fasta_file = fasta_file
         self.repo_id = repo_id
         self.output_dir = output_dir
@@ -53,7 +45,12 @@ class PlantGenoAnnISMEngine:
         seq_dict = self._extract_and_mutate(chrom, start_pos, end_pos)
         logits_49k_dict = self._inference(seq_dict)
         sliced_logits_dict = self._slice(logits_49k_dict)
-        self._calculate_ism_score(sliced_logits_dict, prefix, strand)
+        ism_score = self._calculate_ism_score(sliced_logits_dict, strand)
+
+        if self.accelerator.is_main_process:   
+            out_path = os.path.join(self.output_dir, f"{prefix}_ism_score.npy")
+            np.save(out_path, ism_score)
+            print(f"ISM score has been saved in {out_path}")
 
         self.accelerator.wait_for_everyone()
 
@@ -124,7 +121,7 @@ class PlantGenoAnnISMEngine:
             
         return sliced_dict
 
-    def _calculate_ism_score(self, sliced_dict, prefix, strand):
+    def _calculate_ism_score(self, sliced_dict, strand):
         if not self.accelerator.is_main_process: 
             return
             
@@ -144,7 +141,6 @@ class PlantGenoAnnISMEngine:
         else:
             valid_tracks = mut_avg[:, [1, 3]] 
             ism_score = 0.5 * np.sum(valid_tracks, axis=1)
-            ism_score = ism_score[::-1] 
-            
-        out_path = os.path.join(self.output_dir, f"{prefix}_ism_score.npy")
-        np.save(out_path, ism_score)
+            ism_score = ism_score[::-1]
+
+        return ism_score
