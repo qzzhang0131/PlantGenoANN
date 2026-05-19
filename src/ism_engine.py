@@ -8,7 +8,15 @@ from accelerate import Accelerator
 from torch.utils.data import DataLoader, TensorDataset
 
 class PlantGenoAnnISMEngine:
-    def __init__(self, fasta_file: str, repo_id: str, output_path: str, batch_size: int = 24, seq_len: int = 49152, slice_len: int = 32768):
+    def __init__(
+            self, 
+            fasta_file: str, 
+            repo_id: str, 
+            output_path: str, 
+            batch_size: int = 24, 
+            seq_len: int = 49152, 
+            slice_len: int = 32768
+        ):
         self.fasta_file = fasta_file
         self.repo_id = repo_id
         self.output_path = output_path
