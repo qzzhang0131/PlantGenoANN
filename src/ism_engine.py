@@ -8,10 +8,10 @@ from accelerate import Accelerator
 from torch.utils.data import DataLoader, TensorDataset
 
 class PlantGenoAnnISMEngine:
-    def __init__(self, fasta_file: str, repo_id: str, output_dir: str, batch_size: int = 24, seq_len: int = 49152, slice_len: int = 32768):
+    def __init__(self, fasta_file: str, repo_id: str, output_path: str, batch_size: int = 24, seq_len: int = 49152, slice_len: int = 32768):
         self.fasta_file = fasta_file
         self.repo_id = repo_id
-        self.output_dir = output_dir
+        self.output_path = output_path
         self.batch_size = batch_size
         
         self.seq_len = seq_len
@@ -24,7 +24,6 @@ class PlantGenoAnnISMEngine:
         self.slice_left = self.slice_len // 2
         self.slice_right = self.slice_len // 2 - 1
         
-        os.makedirs(self.output_dir, exist_ok=True)
         self.accelerator = Accelerator()
         
         self.tokenizer = AutoTokenizer.from_pretrained(self.repo_id, trust_remote_code=True)
@@ -39,7 +38,7 @@ class PlantGenoAnnISMEngine:
         self.rule2 = {'A': 'C', 'T': 'G', 'C': 'A', 'G': 'T'}
         self.rule3 = {'A': 'G', 'T': 'C', 'C': 'T', 'G': 'A'}
 
-    def process_region(self, chrom: str, start_pos: int, end_pos: int, strand: str, prefix: str):
+    def process_region(self, chrom: str, start_pos: int, end_pos: int, strand: str):
         self.accelerator.wait_for_everyone()
         
         seq_dict = self._extract_and_mutate(chrom, start_pos, end_pos)
@@ -48,9 +47,8 @@ class PlantGenoAnnISMEngine:
         ism_score = self._calculate_ism_score(sliced_logits_dict, strand)
 
         if self.accelerator.is_main_process:   
-            out_path = os.path.join(self.output_dir, f"{prefix}_ism_score.npy")
-            np.save(out_path, ism_score)
-            print(f"ISM score has been saved in {out_path}")
+            np.save(self.output_path, ism_score)
+            print(f"ISM score has been saved in {self.output_path}")
 
         self.accelerator.wait_for_everyone()
 
